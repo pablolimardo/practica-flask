@@ -106,11 +106,13 @@ def gestion_tareas():
     
     html_content = """
     <!DOCTYPE html>
-    <html>
+    <html lang="es">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <head><title>Bienvenida</title></head>
     <body>
         <h1>Bienvenido al Sistema de Gestión de Tareas</h1>
-        <p>Este es el recurso protegido. ¡Puedes empezar a gestionar tus tareas!</p>
+        <p>Este es el recurso protegido. ¡Podés empezar a gestionar tus tareas!</p>
     </body>
     </html>
     """
