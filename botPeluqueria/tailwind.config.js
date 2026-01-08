@@ -28,9 +28,9 @@ export default {
         'graffiti': ['"Rubik Spray Paint"', 'cursive'],
       },
       backgroundImage: {
-        'brick-wall': "url('https://images.unsplash.com/photo-1554435493-4343db925f8b?w=1200&q=80')",
-        'concrete-wall': "url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1200&q=80')",
-        'metal-texture': "url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80')",
+        'brick-wall': "url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200&q=80')",
+        'concrete-wall': "url('https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=1200&q=80')",
+        'metal-texture': "url('https://images.unsplash.com/photo-1565118531796-763e5082d113?w=1200&q=80')",
       },
       dropShadow: {
         'neon-cyan': '0 0 10px #00FFFF',

@@ -417,6 +417,17 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          {/* Botón Volver al Inicio - Centrado */}
+          <div className="flex justify-center mt-12">
+            <a 
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              className="group relative px-10 py-4 bg-transparent border-4 border-lime-spray text-lime-spray glow-lime font-bebas text-2xl tracking-widest hover:bg-lime-spray hover:text-black transition-all duration-300 shadow-spray hover-spray-glow uppercase rotate-graffiti-1 cursor-pointer"
+            >
+              <span className="relative z-10">↑ VOLVER AL INICIO</span>
+            </a>
+          </div>
         </div>
       </footer>
     </div>
