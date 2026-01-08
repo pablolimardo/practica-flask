@@ -25,6 +25,12 @@ export default function Home() {
     { id: 4, style: 'LETTERING', price: 'DESDE $25K', color: 'lime-spray' },
   ];
 
+  const jewelry = [
+    { id: 1, name: 'CADENAS PLATA 925', price: 'DESDE $50K', color: 'orange-tag' },
+    { id: 2, name: 'ANILLOS CALAVERA', price: 'DESDE $20K', color: 'purple-paint' },
+    { id: 3, name: 'PULSERAS ACERO', price: 'DESDE $15K', color: 'neon-cyan' },
+  ];
+
   return (
     <div className="min-h-screen bg-black-wall text-white selection:bg-neon-cyan selection:text-black overflow-x-hidden">
       
@@ -236,6 +242,73 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Jewelry Section - Urban Accessories */}
+      <section className="py-32 px-4 relative bg-black-wall torn-edge-top">
+        <div className="absolute inset-0 opacity-10 bg-concrete-wall bg-cover"></div>
+        
+        {/* Splatters decorativos */}
+        <div className="absolute top-20 left-10 opacity-20">
+          <SpraySplatter className="w-40 h-40" color="#FF6600" />
+        </div>
+        <div className="absolute bottom-20 right-20 opacity-15">
+          <SpraySplatter className="w-48 h-48" color="#9D00FF" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-block bg-orange-tag text-black font-bebas text-2xl px-6 py-2 mb-6 shadow-spray rotate-graffiti-1">
+              PREMIUM GOODS
+            </div>
+            
+            <DrippingText color="#FF6600">
+              <h2 className="text-7xl md:text-9xl font-bangers text-white text-graffiti-outline mb-4 uppercase">
+                URBAN <span className="text-purple-paint glow-magenta">JEWELRY</span>
+              </h2>
+            </DrippingText>
+            
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <TagArrow className="w-12 h-12" color="#FF6600" />
+              <SprayStar className="w-8 h-8" color="#9D00FF" />
+              <TagArrow className="w-12 h-12 transform rotate-180" color="#FF6600" />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            {jewelry.map((item, index) => (
+              <div 
+                key={item.id} 
+                className={`group relative bg-concrete border-8 border-${item.color} p-10 hover:bg-concrete-light transition-all shadow-spray-strong hover-spray-glow`}
+                style={{ transform: `rotate(${index === 1 ? -1.5 : index === 2 ? 1 : 0}deg)` }}
+              >
+                {/* Duct tape superior */}
+                <div className="absolute -top-4 left-1/4 w-2/3">
+                  <DuctTape className="h-6" rotation={index === 1 ? 2 : -2} />
+                </div>
+                
+                <div className="text-center">
+                  <div className={`mb-6`}>
+                    <SkullStencil className={`w-20 h-20 mx-auto text-${item.color} group-hover:scale-110 transition-transform`} />
+                  </div>
+                  
+                  <h3 className="text-3xl font-bebas text-white mb-4 tracking-wider uppercase">
+                    {item.name}
+                  </h3>
+                  
+                  <div className={`inline-block bg-black border-2 border-${item.color} px-6 py-3`}>
+                    <p className={`text-${item.color} font-marker text-xl`}>{item.price}</p>
+                  </div>
+                </div>
+
+                {/* Spray star decoration */}
+                <div className="absolute -bottom-4 -right-4">
+                  <SprayStar className="w-10 h-10" color={item.id === 1 ? '#FF6600' : item.id === 2 ? '#9D00FF' : '#00FFFF'} />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
