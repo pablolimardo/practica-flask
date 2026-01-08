@@ -95,7 +95,7 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
             <a 
-              href="https://wa.me/5492966353697" 
+              href="https://wa.me/5492966784569" 
               className="group relative px-12 py-5 bg-neon-cyan text-black font-bebas text-3xl tracking-widest hover:bg-hot-magenta hover:text-white transition-all duration-300 shadow-spray-strong hover-spray-glow uppercase border-4 border-black rotate-graffiti-1"
             >
               <span className="relative z-10">AGENDÁ TURNO</span>
@@ -220,7 +220,7 @@ export default function Home() {
               </div>
               
               <a 
-                href="https://wa.me/5492966353697"
+                href="https://wa.me/5492966784569"
                 className="inline-block px-10 py-5 bg-hot-magenta text-white font-bebas text-3xl hover:bg-lime-spray hover:text-black transition-all shadow-spray-strong hover-spray-glow uppercase border-4 border-black"
               >
                 CONSULTÁ DISEÑO
