@@ -12,10 +12,14 @@ export default function Home() {
   const [activeService, setActiveService] = useState(null);
 
   const services = [
-    { id: 1, name: 'CORTE CLÁSICO', price: '$8.000', duration: '30min', icon: ScissorsStencil, color: 'neon-cyan' },
-    { id: 2, name: 'BARBA PREMIUM', price: '$5.000', duration: '20min', icon: BeardStencil, color: 'hot-magenta' },
-    { id: 3, name: 'FULL SERVICE', price: '$12.000', duration: '45min', icon: RazorStencil, color: 'lime-spray', popular: true },
-    { id: 4, name: 'NAVAJA CLÁSICA', price: '$6.000', duration: '30min', icon: CombStencil, color: 'orange-tag' },
+    { id: 1, name: 'CORTE CLÁSICO', price: '$8.000', duration: '30min', icon: ScissorsStencil, color: 'neon-cyan', 
+      gallery: ['/service-corte.jpg', '/service-corte.jpg', '/service-corte.jpg'] },
+    { id: 2, name: 'BARBA PREMIUM', price: '$5.000', duration: '20min', icon: BeardStencil, color: 'hot-magenta',
+      gallery: ['/service-barba.jpg', '/service-barba.jpg', '/service-barba.jpg'] },
+    { id: 3, name: 'FULL SERVICE', price: '$12.000', duration: '45min', icon: RazorStencil, color: 'lime-spray', popular: true,
+      gallery: ['/service-full.jpg', '/service-full.jpg', '/service-full.jpg'] },
+    { id: 4, name: 'NAVAJA CLÁSICA', price: '$6.000', duration: '30min', icon: CombStencil, color: 'orange-tag',
+      gallery: ['/service-navaja.jpg', '/service-navaja.jpg', '/service-navaja.jpg'] },
   ];
 
   const tattoos = [
@@ -33,6 +37,23 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black-wall text-white selection:bg-neon-cyan selection:text-black overflow-x-hidden">
+      
+      {/* Floating WhatsApp Button */}
+      <a 
+        href="https://wa.me/5492966784569"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-float"
+        aria-label="Contactar por WhatsApp"
+      >
+        <Image 
+          src="/whatsapp-icon.png"
+          alt="WhatsApp"
+          width={36}
+          height={36}
+          className="drop-shadow-lg"
+        />
+      </a>
       
       {/* Hero Section - Graffiti Wall */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black-wall via-concrete to-black-wall">
@@ -142,40 +163,57 @@ export default function Home() {
               return (
                 <div
                   key={service.id}
-                  className={`relative group bg-black border-4 ${service.popular ? 'border-lime-spray' : `border-${service.color}`} p-8 shadow-spray hover-spray-glow transition-all duration-300`}
+                  className={`relative group bg-black border-4 ${service.popular ? 'border-lime-spray' : `border-${service.color}`} shadow-spray hover-spray-glow transition-all duration-300`}
                   style={{ transform: `rotate(${rotation}deg)` }}
                   onMouseEnter={() => setActiveService(service.id)}
                   onMouseLeave={() => setActiveService(null)}
                 >
                   {/* Duct tape en la parte superior */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-3/4">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-3/4 z-10">
                     <DuctTape className="h-6" rotation={rotation * -1} />
                   </div>
                   
                   {service.popular && (
-                    <div className="absolute -top-8 -right-8 bg-lime-spray text-black px-4 py-2 font-bebas text-xl rotate-12 shadow-spray">
+                    <div className="absolute -top-8 -right-8 bg-lime-spray text-black px-4 py-2 font-bebas text-xl rotate-12 shadow-spray z-10">
                       ★ TOP ★
                     </div>
                   )}
                   
-                  <div className={`text-${service.color} mb-6 flex justify-center group-hover:scale-110 transition-transform`}>
-                    <IconComponent className="w-20 h-20" />
+                  {/* Horizontal Scroll Gallery - Mobile First */}
+                  <div className="carousel-container px-4 pt-2 mb-4">
+                    {service.gallery.map((img, idx) => (
+                      <div key={idx} className="carousel-item relative">
+                        <Image
+                          src={img}
+                          alt={`${service.name} ${idx + 1}`}
+                          width={380}
+                          height={250}
+                          className="w-full h-48 object-cover rounded border-2 border-white/20"
+                        />
+                      </div>
+                    ))}
                   </div>
                   
-                  <h3 className="text-3xl font-bangers text-white text-center mb-4 tracking-wide">
-                    {service.name}
-                  </h3>
-                  
-                  <div className="text-center mb-4">
-                    <span className={`text-4xl font-bebas text-${service.color} glow-${service.color.split('-')[0]}`}>
-                      {service.price}
-                    </span>
-                  </div>
-                  
-                  <div className="border-t-2 border-dashed border-white/30 pt-4 mt-4">
-                    <p className="text-white/70 font-marker text-sm text-center uppercase">
-                      {service.duration}
-                    </p>
+                  <div className="px-8 pb-8">
+                    <div className={`text-${service.color} mb-6 flex justify-center group-hover:scale-110 transition-transform`}>
+                      <IconComponent className="w-20 h-20" />
+                    </div>
+                    
+                    <h3 className="text-3xl font-bangers text-white text-center mb-4 tracking-wide">
+                      {service.name}
+                    </h3>
+                    
+                    <div className="text-center mb-4">
+                      <span className={`text-4xl font-bebas text-${service.color} glow-${service.color.split('-')[0]}`}>
+                        {service.price}
+                      </span>
+                    </div>
+                    
+                    <div className="border-t-2 border-dashed border-white/30 pt-4 mt-4">
+                      <p className="text-white/70 font-marker text-sm text-center uppercase">
+                        {service.duration}
+                      </p>
+                    </div>
                   </div>
                 </div>
               );

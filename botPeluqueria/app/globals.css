@@ -247,3 +247,102 @@ body {
     background-attachment: scroll;
   }
 }
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #39FF14 0%, #00FFFF 100%);
+  display: flex;
+  align-items: center;
+  justify-center;
+  box-shadow: 
+    0 4px 16px rgba(57, 255, 20, 0.4),
+    0 8px 32px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  animation: whatsapp-pulse 2s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 
+    0 6px 24px rgba(57, 255, 20, 0.6),
+    0 12px 48px rgba(0, 255, 255, 0.5);
+}
+
+@keyframes whatsapp-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 4px 16px rgba(57, 255, 20, 0.4),
+      0 8px 32px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 6px 20px rgba(57, 255, 20, 0.6),
+      0 12px 40px rgba(0, 255, 255, 0.5);
+  }
+}
+
+@media (max-width: 640px) {
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+/* Horizontal Scroll Carousel - Mobile First */
+.carousel-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 4px;
+  margin: 0 -16px; /* Permite que el scroll llegue hasta los bordes */
+}
+
+.carousel-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #00FFFF, #39FF14);
+  border-radius: 3px;
+}
+
+.carousel-item {
+  flex: 0 0 280px; /* Mobile-first: 280px width */
+  scroll-snap-align: start;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .carousel-item {
+    flex: 0 0 320px; /* Tablet: 320px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 380px; /* Desktop: 380px */
+  }
+  
+  .carousel-container {
+    margin: 0; /* Remove negative margin on desktop */
+  }
+}
