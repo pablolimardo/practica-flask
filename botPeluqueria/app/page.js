@@ -13,26 +13,33 @@ export default function Home() {
 
   const services = [
     { id: 1, name: 'CORTE CLÁSICO', price: '$8.000', duration: '30min', icon: ScissorsStencil, color: 'neon-cyan', 
-      gallery: ['/service-corte.jpg', '/service-corte.jpg', '/service-corte.jpg'] },
+      gallery: ['/service-corte.jpg', '/service-corte-2.jpg', '/service-corte-3.jpg'] },
     { id: 2, name: 'BARBA PREMIUM', price: '$5.000', duration: '20min', icon: BeardStencil, color: 'hot-magenta',
-      gallery: ['/service-barba.jpg', '/service-barba.jpg', '/service-barba.jpg'] },
+      gallery: ['/service-barba.jpg', '/service-barba-2.jpg', '/service-barba-3.jpg'] },
     { id: 3, name: 'FULL SERVICE', price: '$12.000', duration: '45min', icon: RazorStencil, color: 'lime-spray', popular: true,
-      gallery: ['/service-full.jpg', '/service-full.jpg', '/service-full.jpg'] },
+      gallery: ['/service-full.jpg', '/service-full-2.jpg', '/service-full.jpg'] },
     { id: 4, name: 'NAVAJA CLÁSICA', price: '$6.000', duration: '30min', icon: CombStencil, color: 'orange-tag',
-      gallery: ['/service-navaja.jpg', '/service-navaja.jpg', '/service-navaja.jpg'] },
+      gallery: ['/service-navaja.jpg', '/service-navaja-2.jpg', '/service-navaja.jpg'] },
   ];
 
   const tattoos = [
-    { id: 1, style: 'BLACKWORK', price: 'DESDE $40K', color: 'white-stencil' },
-    { id: 2, style: 'REALISMO', price: 'CONSULTAR', color: 'neon-cyan' },
-    { id: 3, style: 'OLD SCHOOL', price: 'DESDE $35K', color: 'hot-magenta' },
-    { id: 4, style: 'LETTERING', price: 'DESDE $25K', color: 'lime-spray' },
+    { id: 1, style: 'BLACKWORK', price: 'DESDE $40K', color: 'white-stencil',
+      gallery: ['/tattoo-blackwork.jpg', '/tattoo-blackwork.jpg', '/tattoo-blackwork.jpg'] },
+    { id: 2, style: 'REALISMO', price: 'CONSULTAR', color: 'neon-cyan',
+      gallery: ['/tattoo-realismo.jpg', '/tattoo-realismo.jpg', '/tattoo-realismo.jpg'] },
+    { id: 3, style: 'OLD SCHOOL', price: 'DESDE $35K', color: 'hot-magenta',
+      gallery: ['/tattoo-oldschool.jpg', '/tattoo-oldschool.jpg', '/tattoo-oldschool.jpg'] },
+    { id: 4, style: 'LETTERING', price: 'DESDE $25K', color: 'lime-spray',
+      gallery: ['/tattoo-oldschool.jpg', '/tattoo-oldschool.jpg', '/tattoo-oldschool.jpg'] },
   ];
 
   const jewelry = [
-    { id: 1, name: 'CADENAS PLATA 925', price: 'DESDE $50K', color: 'orange-tag' },
-    { id: 2, name: 'ANILLOS CALAVERA', price: 'DESDE $20K', color: 'purple-paint' },
-    { id: 3, name: 'PULSERAS ACERO', price: 'DESDE $15K', color: 'neon-cyan' },
+    { id: 1, name: 'CADENAS PLATA 925', price: 'DESDE $50K', color: 'orange-tag',
+      gallery: ['/jewelry-cadenas.jpg', '/jewelry-cadenas.jpg', '/jewelry-cadenas.jpg'] },
+    { id: 2, name: 'ANILLOS CALAVERA', price: 'DESDE $20K', color: 'purple-paint',
+      gallery: ['/jewelry-anillos.jpg', '/jewelry-anillos.jpg', '/jewelry-anillos.jpg'] },
+    { id: 3, name: 'PULSERAS ACERO', price: 'DESDE $15K', color: 'neon-cyan',
+      gallery: ['/jewelry-anillos.jpg', '/jewelry-anillos.jpg', '/jewelry-anillos.jpg'] },
   ];
 
   return (
@@ -46,13 +53,23 @@ export default function Home() {
         className="whatsapp-float"
         aria-label="Contactar por WhatsApp"
       >
-        <Image 
-          src="/whatsapp-icon.png"
-          alt="WhatsApp"
-          width={36}
-          height={36}
+        <svg 
+          width="36" 
+          height="36" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
           className="drop-shadow-lg"
-        />
+        >
+          <path 
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" 
+            fill="white"
+          />
+          <path 
+            d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a12.062 12.062 0 005.713 1.447h.005c6.585 0 11.942-5.336 11.945-11.893 0-3.176-1.24-6.165-3.478-8.453zm-8.475 18.293c-1.778 0-3.52-.478-5.038-1.378l-.361-.214-3.741.98.998-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.892 6.993c-.002 5.45-4.436 9.887-9.88 9.887z" 
+            fill="white"
+          />
+        </svg>
       </a>
       
       {/* Hero Section - Graffiti Wall */}
@@ -269,14 +286,31 @@ export default function Home() {
               {tattoos.map((item, index) => (
                 <div 
                   key={item.id} 
-                  className={`bg-black border-4 border-${item.color} p-8 hover:border-neon-cyan transition-all group hover-spray-glow shadow-spray`}
+                  className={`bg-black border-4 border-${item.color} hover:border-neon-cyan transition-all group hover-spray-glow shadow-spray`}
                   style={{ transform: `rotate(${index % 2 === 0 ? -1 : 1}deg)` }}
                 >
-                  <div className="text-center mb-4">
-                    <SkullStencil className={`w-16 h-16 mx-auto text-${item.color} group-hover:text-neon-cyan transition-colors`} />
+                  {/* Horizontal Scroll Gallery */}
+                  <div className="carousel-container px-2 pt-2 mb-4">
+                    {item.gallery.map((img, idx) => (
+                      <div key={idx} className="carousel-item relative">
+                        <Image
+                          src={img}
+                          alt={`${item.style} ${idx + 1}`}
+                          width={380}
+                          height={250}
+                          className="w-full h-40 object-cover rounded border-2 border-white/10"
+                        />
+                      </div>
+                    ))}
                   </div>
-                  <h3 className="text-3xl font-bebas text-white text-center mb-3 tracking-wider">{item.style}</h3>
-                  <p className={`text-${item.color} font-marker text-center text-lg`}>{item.price}</p>
+
+                  <div className="px-8 pb-8">
+                    <div className="text-center mb-4">
+                      <SkullStencil className={`w-16 h-16 mx-auto text-${item.color} group-hover:text-neon-cyan transition-colors`} />
+                    </div>
+                    <h3 className="text-3xl font-bebas text-white text-center mb-3 tracking-wider">{item.style}</h3>
+                    <p className={`text-${item.color} font-marker text-center text-lg`}>{item.price}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -319,15 +353,30 @@ export default function Home() {
             {jewelry.map((item, index) => (
               <div 
                 key={item.id} 
-                className={`group relative bg-concrete border-8 border-${item.color} p-10 hover:bg-concrete-light transition-all shadow-spray-strong hover-spray-glow`}
+                className={`group relative bg-concrete border-8 border-${item.color} hover:bg-concrete-light transition-all shadow-spray-strong hover-spray-glow`}
                 style={{ transform: `rotate(${index === 1 ? -1.5 : index === 2 ? 1 : 0}deg)` }}
               >
                 {/* Duct tape superior */}
-                <div className="absolute -top-4 left-1/4 w-2/3">
+                <div className="absolute -top-4 left-1/4 w-2/3 z-10">
                   <DuctTape className="h-6" rotation={index === 1 ? 2 : -2} />
                 </div>
                 
-                <div className="text-center">
+                {/* Horizontal Scroll Gallery */}
+                <div className="carousel-container px-2 pt-6 mb-4">
+                  {item.gallery.map((img, idx) => (
+                    <div key={idx} className="carousel-item relative">
+                      <Image
+                        src={img}
+                        alt={`${item.name} ${idx + 1}`}
+                        width={380}
+                        height={250}
+                        className="w-full h-48 object-cover rounded border-2 border-white/10"
+                      />
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="text-center px-10 pb-10">
                   <div className={`mb-6`}>
                     <SkullStencil className={`w-20 h-20 mx-auto text-${item.color} group-hover:scale-110 transition-transform`} />
                   </div>
