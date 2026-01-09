@@ -37,8 +37,8 @@ export default function Home() {
       {/* Hero Section - Graffiti Wall */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black-wall via-concrete to-black-wall">
         
-        {/* Background brick texture */}
-        <div className="absolute inset-0 opacity-20 bg-brick-wall bg-cover bg-center"></div>
+        {/* Background brick texture with parallax */}
+        <div className="absolute inset-0 opacity-30 parallax-bg" style={{ backgroundImage: 'url(/hero-bg.png)' }}></div>
         
         {/* Spray splatters decoration */}
         <div className="absolute top-10 left-10 opacity-30">
@@ -113,7 +113,7 @@ export default function Home() {
 
       {/* Services Section - Street Flyers */}
       <section id="servicios" className="py-32 px-4 relative bg-concrete-light torn-edge-top">
-        <div className="absolute inset-0 opacity-10 bg-concrete-wall bg-cover"></div>
+        <div className="absolute inset-0 opacity-20 parallax-bg" style={{ backgroundImage: 'url(/services-bg.png)' }}></div>
         
         {/* Splatters decorativos */}
         <div className="absolute top-20 right-10 opacity-20">
@@ -186,7 +186,7 @@ export default function Home() {
 
       {/* Tattoo Section - Metal Wall */}
       <section className="py-32 px-4 relative overflow-hidden bg-concrete torn-edge-top spray-splatter">
-        <div className="absolute inset-0 opacity-15 bg-metal-texture bg-cover"></div>
+        <div className="absolute inset-0 opacity-25 parallax-bg" style={{ backgroundImage: 'url(/tattoo-bg.png)' }}></div>
         
         {/* Splatters */}
         <div className="absolute top-1/4 left-10 opacity-25">
@@ -248,7 +248,7 @@ export default function Home() {
 
       {/* Jewelry Section - Urban Accessories */}
       <section className="py-32 px-4 relative bg-black-wall torn-edge-top">
-        <div className="absolute inset-0 opacity-10 bg-concrete-wall bg-cover"></div>
+        <div className="absolute inset-0 opacity-15 parallax-bg" style={{ backgroundImage: 'url(/jewelry-bg.png)' }}></div>
         
         {/* Splatters decorativos */}
         <div className="absolute top-20 left-10 opacity-20">
@@ -315,7 +315,7 @@ export default function Home() {
 
       {/* Team Section - Stencil Style */}
       <section className="py-32 px-4 bg-black-wall border-t-8 border-neon-cyan torn-edge-top relative">
-        <div className="absolute inset-0 opacity-5 bg-brick-wall bg-cover"></div>
+        <div className="absolute inset-0 opacity-15 parallax-bg" style={{ backgroundImage: 'url(/team-bg.png)' }}></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
@@ -383,7 +383,7 @@ export default function Home() {
 
       {/* Footer - Brick Wall */}
       <footer className="py-20 px-4 bg-concrete border-t-8 border-hot-magenta relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-brick-wall bg-cover"></div>
+        <div className="absolute inset-0 opacity-20 parallax-bg" style={{ backgroundImage: 'url(/hero-bg.png)' }}></div>
         
         {/* Spray splatters */}
         <div className="absolute bottom-10 left-20 opacity-20">
