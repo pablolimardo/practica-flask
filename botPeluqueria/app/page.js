@@ -12,33 +12,33 @@ export default function Home() {
   const [activeService, setActiveService] = useState(null);
 
   const services = [
-    { id: 1, name: 'CORTE CLÁSICO', price: '$8.000', duration: '30min', icon: ScissorsStencil, color: 'neon-cyan', 
+    { id: 1, name: 'CORTE CLÁSICO', price: '$20.000', duration: '30min', icon: ScissorsStencil, color: 'neon-cyan', 
       gallery: ['/service-corte.jpg', '/service-corte-2.jpg', '/service-corte-3.jpg'] },
-    { id: 2, name: 'BARBA PREMIUM', price: '$5.000', duration: '20min', icon: BeardStencil, color: 'hot-magenta',
+    { id: 2, name: 'BARBA PREMIUM', price: '$25.000', duration: '20min', icon: BeardStencil, color: 'hot-magenta',
       gallery: ['/service-barba.jpg', '/service-barba-2.jpg', '/service-barba-3.jpg'] },
-    { id: 3, name: 'FULL SERVICE', price: '$12.000', duration: '45min', icon: RazorStencil, color: 'lime-spray', popular: true,
+    { id: 3, name: 'FULL SERVICE', price: '$30.000', duration: '45min', icon: RazorStencil, color: 'lime-spray', popular: true,
       gallery: ['/service-full.jpg', '/service-full-2.jpg', '/service-full.jpg'] },
-    { id: 4, name: 'NAVAJA CLÁSICA', price: '$6.000', duration: '30min', icon: CombStencil, color: 'orange-tag',
+    { id: 4, name: 'NAVAJA CLÁSICA', price: '$22.000', duration: '30min', icon: CombStencil, color: 'orange-tag',
       gallery: ['/service-navaja.jpg', '/service-navaja-2.jpg', '/service-navaja.jpg'] },
   ];
 
   const tattoos = [
-    { id: 1, style: 'BLACKWORK', price: 'DESDE $40K', color: 'white-stencil',
+    { id: 1, style: 'BLACKWORK', price: 'DESDE $ 40K', color: 'white-stencil',
       gallery: ['/tattoo-blackwork.jpg', '/tattoo-blackwork.jpg', '/tattoo-blackwork.jpg'] },
     { id: 2, style: 'REALISMO', price: 'CONSULTAR', color: 'neon-cyan',
       gallery: ['/tattoo-realismo.jpg', '/tattoo-realismo.jpg', '/tattoo-realismo.jpg'] },
-    { id: 3, style: 'OLD SCHOOL', price: 'DESDE $35K', color: 'hot-magenta',
+    { id: 3, style: 'OLD SCHOOL', price: 'DESDE $ 35K', color: 'hot-magenta',
       gallery: ['/tattoo-oldschool.jpg', '/tattoo-oldschool.jpg', '/tattoo-oldschool.jpg'] },
-    { id: 4, style: 'LETTERING', price: 'DESDE $25K', color: 'lime-spray',
+    { id: 4, style: 'LETTERING', price: 'DESDE $ 25K', color: 'lime-spray',
       gallery: ['/tattoo-oldschool.jpg', '/tattoo-oldschool.jpg', '/tattoo-oldschool.jpg'] },
   ];
 
   const jewelry = [
-    { id: 1, name: 'CADENAS PLATA 925', price: 'DESDE $50K', color: 'orange-tag',
+    { id: 1, name: 'CADENAS PLATA 925', price: 'DESDE $ 50K', color: 'orange-tag',
       gallery: ['/jewelry-cadenas.jpg', '/jewelry-cadenas.jpg', '/jewelry-cadenas.jpg'] },
-    { id: 2, name: 'ANILLOS CALAVERA', price: 'DESDE $20K', color: 'purple-paint',
+    { id: 2, name: 'ANILLOS CALAVERA', price: 'DESDE $ 20K', color: 'purple-paint',
       gallery: ['/jewelry-anillos.jpg', '/jewelry-anillos.jpg', '/jewelry-anillos.jpg'] },
-    { id: 3, name: 'PULSERAS ACERO', price: 'DESDE $15K', color: 'neon-cyan',
+    { id: 3, name: 'PULSERAS ACERO', price: 'DESDE $ 15K', color: 'neon-cyan',
       gallery: ['/jewelry-anillos.jpg', '/jewelry-anillos.jpg', '/jewelry-anillos.jpg'] },
   ];
 
@@ -468,6 +468,126 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Google Reviews Section */}
+      <section className="py-32 px-4 relative bg-black-wall border-t-8 border-neon-cyan overflow-hidden">
+        <div className="absolute inset-0 opacity-10 parallax-bg" style={{ backgroundImage: 'url(/services-bg.png)' }}></div>
+        
+        {/* Spray splatters */}
+        <div className="absolute top-20 left-10 opacity-15">
+          <SpraySplatter className="w-64 h-64" color="#FF00FF" />
+        </div>
+        <div className="absolute bottom-20 right-10 opacity-15">
+          <SpraySplatter className="w-56 h-56" color="#39FF14" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Título */}
+          <div className="text-center mb-20">
+            <div className="inline-block bg-lime-spray text-black font-bebas text-2xl px-6 py-2 mb-6 shadow-spray rotate-graffiti-1">
+              ⭐ GOOGLE REVIEWS
+            </div>
+            
+            <DrippingText color="#00FFFF">
+              <h2 className="text-7xl md:text-9xl font-bangers text-white text-graffiti-outline mb-4 uppercase">
+                LO QUE <span className="text-hot-magenta glow-magenta">DICEN</span>
+              </h2>
+            </DrippingText>
+
+            <div className="flex items-center justify-center gap-3 mt-6">
+              <TagArrow className="w-12 h-12" color="#39FF14" />
+              <div className="flex gap-2">
+                {[1,2,3,4,5].map(i => (
+                  <span key={i} className="text-4xl text-yellow-spray drop-shadow-[0_0_10px_rgba(255,255,0,0.8)]">⭐</span>
+                ))}
+              </div>
+              <TagArrow className="w-12 h-12 transform rotate-180" color="#39FF14" />
+            </div>
+          </div>
+
+          {/* Reviews Carousel - Mobile First */}
+          <div className="carousel-container px-4">
+            {[
+              {
+                name: "Matías R.",
+                rating: 5,
+                comment: "Tremendo lugar! El ambiente es re copado y los muchachos saben lo que hacen. Me hice un fade y quedó de 10. Sin dudas vuelvo.",
+                color: "neon-cyan"
+              },
+              {
+                name: "Lucas G.",
+                rating: 5,
+                comment: "Mejor barbería de El Calafate. Atención de primera, música grosa y cortes prolijos. Recomendado 100%",
+                color: "hot-magenta"
+              },
+              {
+                name: "Diego F.",
+                rating: 5,
+                comment: "Excelente servicio! Me hicieron un degradado espectacular. El lugar tiene onda y te sentís cómodo. Voy a seguir viniendo.",
+                color: "lime-spray"
+              },
+              {
+                name: "Sebastián M.",
+                rating: 5,
+                comment: "La barbería es un lujo! Me atendieron de 10, me hice barba y corte. Quedé más que conforme. Totalmente recomendable.",
+                color: "orange-tag"
+              }
+            ].map((review, index) => (
+              <div 
+                key={index}
+                className={`carousel-item bg-concrete border-4 border-${review.color} shadow-spray-strong hover-spray-glow transition-all group`}
+                style={{ transform: `rotate(${index % 2 === 0 ? -1 : 1}deg)` }}
+              >
+                {/* Duct tape */}
+                <div className="absolute -top-3 left-1/4 w-1/2 z-10">
+                  <DuctTape className="h-6" rotation={index % 2 === 0 ? 2 : -2} />
+                </div>
+
+                <div className="p-8 pt-10">
+                  {/* Estrellas */}
+                  <div className="flex gap-1 mb-4 justify-center">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <span key={i} className="text-2xl text-yellow-spray drop-shadow-[0_0_8px_rgba(255,255,0,0.6)]">⭐</span>
+                    ))}
+                  </div>
+
+                  {/* Nombre */}
+                  <h3 className="text-3xl font-bebas text-white text-center mb-4 tracking-wider">
+                    {review.name}
+                  </h3>
+
+                  {/* Comentario */}
+                  <p className="text-white/90 font-marker text-center text-lg leading-relaxed italic">
+                    "{review.comment}"
+                  </p>
+
+                  {/* Google icon decoration */}
+                  <div className="flex justify-center mt-6">
+                    <span className="text-4xl opacity-50">📱</span>
+                  </div>
+                </div>
+
+                {/* Spray star decoration */}
+                <div className="absolute -bottom-3 -right-3">
+                  <SprayStar className="w-10 h-10" color={index === 0 ? '#00FFFF' : index === 1 ? '#FF00FF' : '#39FF14'} />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Call to action */}
+          <div className="text-center mt-16">
+            <a 
+              href="https://g.page/r/CbdbzBxcWZZoEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-10 py-5 bg-lime-spray text-black font-bebas text-3xl hover:bg-neon-cyan transition-all shadow-spray-strong hover-spray-glow uppercase border-4 border-black rotate-graffiti-2"
+            >
+              ⭐ DEJÁ TU RESEÑA
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer - Brick Wall */}
       <footer className="py-20 px-4 bg-concrete border-t-8 border-hot-magenta relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 parallax-bg" style={{ backgroundImage: 'url(/hero-bg.png)' }}></div>
@@ -481,7 +601,7 @@ export default function Home() {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-12">
             {/* Logo/Brand */}
             <div className="text-center md:text-left">
               <div className="text-6xl font-bangers text-white mb-4 text-graffiti-outline uppercase">
@@ -494,12 +614,33 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Info */}
-            <div className="text-center md:text-right space-y-4">
-              <div className="inline-block border-4 border-lime-spray px-8 py-4 font-bebas text-white text-2xl tracking-widest shadow-spray bg-black rotate-graffiti-2">
+            {/* Ubicación con Mapa */}
+            <div className="text-center space-y-4">
+              <div className="inline-block bg-orange-tag text-black font-bebas text-xl px-6 py-2 mb-2 shadow-spray rotate-graffiti-1">
+                📍 NUESTRO LOCAL
+              </div>
+              <div className="inline-block border-4 border-lime-spray px-8 py-4 font-bebas text-white text-2xl tracking-widest shadow-spray bg-black rotate-graffiti-2 mb-4">
                 PATROCINIO LARA 163
               </div>
-              <p className="text-white/70 font-marker text-sm">
+              
+              {/* Mapa embebido */}
+              <div className="border-4 border-neon-cyan shadow-spray-strong overflow-hidden rounded">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2303.8794733866157!2d-72.2945476!3d-50.350335799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdbb0d3d558227e1%3A0x68956c5c1cc97bb7!2sBarber%20Hood!5e1!3m2!1ses!2sar!4v1767931830347!5m2!1ses!2sar"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="grayscale hover:grayscale-0 transition-all duration-300"
+                ></iframe>
+              </div>
+            </div>
+
+            {/* Copyright */}
+            <div className="text-center md:text-right">
+              <p className="text-white/70 font-marker text-sm mb-8">
                 © 2024 BARBERHOOD • <span className="text-neon-cyan">STREET CULTURE</span>
               </p>
             </div>
